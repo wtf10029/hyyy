@@ -1,4 +1,2 @@
-.idea
-composer.lock
-*.log
-thinkphp
+#过滤文件夹Debug,Release,obj
+runtime/
