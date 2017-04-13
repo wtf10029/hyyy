@@ -1,0 +1,92 @@
+{extend name="layouts/index"}
+
+{block name="title"}{$system.site_name} - 关于我们{/block}
+
+{block name="link"}{/block}
+
+{block name="content"}
+    <!--banner-->
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol>
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      </ol>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="__IMAGE__/{$ab_img.url}" alt="{$ab_img.title}">
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="procontent">
+        <div class="col-xs-4 col-md-4 visible-lg-block">
+          <div class="leftnav">
+            <ul>
+              <a href="javascript:void(0);">
+                <li class="leftnavactive">Introduction</li>
+              </a>
+              <a href="javascript:void(0);">
+                <li>develop purpose</li>
+              </a>
+              <a href="javascript:void(0);">
+                <li>develop project</li>
+              </a>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-8">
+          <div class="location visible-lg-block">
+            <div class="col-xs-12 col-sm-12 col-md-12 abloc">location：<a href="{:url('index_en/Index/index')}"> home &gt;</a>aboutus</div>
+          </div>
+          <div class="proshow">
+            <div class="col-xs-12 col-md-12 proshow1">
+              <div class="col-xs-12 col-md-12">
+                <div class="col-xs-9 col-md-4 abouttil"><span></span>
+                  <font>Company profile</font>
+                </div>
+                <div class="col-xs-3 col-md-8 line"></div>
+              </div>
+              <div class="col-xs-12 col-md-12">
+                <div class="col-xs-12 col-md-6 aboutjj">
+                  Hangzhou Hua Yu Pharmaceutical Technology Co., Ltd. is a medical high-tech product development, production and promotion of the company. The company actively introduce international high-tech equipment and supplies.
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <img src="__PUBLIC__/images/about-right.jpg">
+                </div>
+              </div>
+              <div class="col-xs-12 col-md-12">
+                <div class="col-xs-9 col-md-4 abouttil"><span></span>
+                  <font>Company tenet</font>
+                </div>
+                <div class="col-xs-3 col-md-8 line"></div>
+              </div>
+              <div class="col-xs-12 col-md-12">
+                <div class="col-xs-12 col-md-6">
+                  <img src="__PUBLIC__/images/zz.jpg">
+                </div>
+                <div class="col-xs-12 col-md-6 aboutjj">
+                  Hangzhou Hua Yu Pharmaceutical Technology Co., Ltd. to "let everyone enjoy the health" for business goals. Adhering to the "people-oriented" concept of employment, the intentions of respect for each partner to achieve a win-win situation. The market as the center, not for the market service staff do not, do not serve the market one of the institutions.
+                </div>
+              </div>
+              <div class="col-xs-12 col-md-12">
+                <div class="col-xs-9 col-md-4 abouttil"><span></span>
+                  <font>development plan</font>
+                </div>
+                <div class="col-xs-3 col-md-8 line"></div>
+              </div>
+              <div class="col-xs-12 col-md-12">
+                <div class="col-xs-12 col-md-12 aboutjj">
+                  From the beginning of 2015 the company set up the first five-year plan, based in Zhejiang, and the Yangtze River Delta. By 2020 the company's business volume exceeded 500 million yuan, ranking in Zhejiang Province into the top 10.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+{/block}
+
+{block name="js"}{/block}

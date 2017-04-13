@@ -1,0 +1,85 @@
+{extend name="pub/extend" /}
+
+{block name="title"}
+    <title>分类管理 - 编辑分类</title>
+{/block}
+
+{block name="link"}
+    <!--dynamic table-->
+    <link href="__PUBLIC__/js/advanced-datatable/css/demo_page.css" rel="stylesheet" />
+    <link href="__PUBLIC__/js/advanced-datatable/css/demo_table.css" rel="stylesheet" />
+    <link rel="stylesheet" href="__PUBLIC__/js/data-tables/DT_bootstrap.css" />
+{/block}
+
+{block name="bread"}
+    <ul class="breadcrumb">
+        <li>
+            <a href="{:url('Index/index')}">首页</a>
+        </li>
+        <li class="active">编辑分类</li>
+    </ul>
+{/block}
+
+{block name="content"}
+    <!--body wrapper start-->
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <section class="panel">
+                    <header class="panel-heading">
+                        编辑分类
+                    </header>
+                    <div class="panel-body">
+                        <div class=" form">
+                            <form class="cmxform form-horizontal adminex-form" id="commentForm" method="post" action="{:url('Category/edit',array('id' => $cate['id']))}">
+                                <div class="form-group ">
+                                    <label for="catename" class="control-label col-lg-2">名称</label>
+                                    <div class="col-lg-10">
+                                        <input class=" form-control" id="catename" name="catename" minlength="2" type="text" placeholder="必须填写" value="{$cate.catename}" required />
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="title" class="control-label col-lg-2">英文名</label>
+                                    <div class="col-lg-10">
+                                        <input class="form-control " id="title" type="text" name="title" placeholder="页面title,利于优化" value="{$cate.title}" />
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="keywords" class="control-label col-lg-2">关键词</label>
+                                    <div class="col-lg-10">
+                                        <input class="form-control " id="keywords" type="text" name="keywords" placeholder="页面keywords,利于优化" value="{$cate.keywords}" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">描述</label>
+                                    <div class="col-sm-10">
+                                        <textarea rows="3" maxlength="120" name="description" class="form-control" placeholder="页面description,利于优化,50-100字左右,描 述栏目">{$cate.description}</textarea>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <div class="col-lg-offset-2 col-lg-10">
+                                        <button class="btn btn-primary" type="submit">保存分类</button>
+                                        <button class="btn btn-default" type="reset">重新填写</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+{/block}
+
+{block name="js"}
+    <!--dynamic table-->
+    <script type="text/javascript" language="javascript" src="__PUBLIC__/js/advanced-datatable/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/data-tables/DT_bootstrap.js"></script>
+    <!--dynamic table initialization -->
+    <!-- <script src="__PUBLIC__/js/dynamic_table_init.js"></script> -->
+
+{/block}

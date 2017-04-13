@@ -1,0 +1,75 @@
+{extend name="layouts/index"}
+
+{block name="title"}新闻详情{/block}
+
+{block name="link"}{/block}
+
+{block name="content"}
+    <!--banner-->
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol>
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      </ol>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="__PUBLIC__/images/ny-banner01.jpg" alt="华豫医药">
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="product-row">
+        <div class="location">
+          <div class="col-xs-12 col-sm-12 col-md-12">您所在的位置：<a href="{:url('index/Index/index')}"> 首页 ></a><a href="{:url('index/News/index')}"> 新闻中心 </a> >新闻详情</div>
+        </div>
+        <div class="basic-information">
+          
+          <div class="basic-content">
+            {$news.content}
+            <div class="news-bottom">
+              <p> &nbsp;&nbsp;本文关键词 : 
+                {if condition="empty($keywords)"}
+                  暂无
+                {else /}
+                  {volist name="keywords" id="vo"}
+                    {$vo}
+                  {/volist}
+                {/if}
+              </p>
+              <p> &nbsp;&nbsp;相关文章推荐：</p>
+              {if condition="empty($cor)"}
+                <p>暂无相关文章</p>
+              {else /}
+                {volist name="cor" id="vo"}
+                <p>《<span><a href="{:url('index/News/detail',array('id' => $vo['id']))}">{$vo.title}</span></a>》</p>
+                {/volist}
+              {/if}
+              <div class="page">
+                <ul class="pager">
+                  <li class="previous">
+                      <font>上一篇:</font>
+                      {if condition="empty($up)"}
+                        <span>没有了</span>
+                      {else /}
+                        <a href="{:url('index/News/detail',array('id' => $up['id']))}"><span>{$up.title}</span></a>
+                      {/if}
+                  </li>
+                  <li class="next">
+                      <font>下一篇:</font>
+                      {if condition="empty($down)"}
+                        <span>没有了</span>
+                      {else /}
+                        <a href="{:url('index/News/detail',array('id' => $down['id']))}"><span>{$down.title}</span></a>
+                      {/if}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+{/block}
+
+{block name="js"}{/block}

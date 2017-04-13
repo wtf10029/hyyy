@@ -1,0 +1,86 @@
+{extend name="pub/extend" /}
+
+{block name="title"}
+    <title>分类管理 - 分类列表</title>
+{/block}
+
+{block name="link"}
+    
+{/block}
+
+{block name="bread"}
+    <ul class="breadcrumb">
+        <li>
+            <a href="#">首页</a>
+        </li>
+        <li class="active">分类列表</li>
+    </ul>
+{/block}
+
+{block name="content"}
+    <div class="row">
+        <div class="col-sm-12">
+            <section class="panel">
+                <header class="panel-heading">
+                    分类列表
+                <span class="tools pull-right">
+                    <a href="javascript:;" class="fa fa-chevron-down"></a>
+                    <a href="javascript:;" class="fa fa-times"></a>
+                 </span>
+                </header>
+                <div class="panel-body">
+                    <table class="table  table-hover general-table">
+                        <thead>
+                        <tr>
+                            <th style="width:200px;">ID</th>
+                            <th>分类名称</th>
+                            <th style="width:200px;">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {volist name="cate" id="vo"}
+                            <tr>
+                                <td>{$vo.id}</td>
+                                <td>
+                                    {$vo.catename}
+                                    <a href="{:url('Category/addProg',array('pid'=>$vo['id']))}">
+                                        <button class="btn btn-xs btn-warning" type="button"><i class="fa fa-plus-square"></i>&nbsp;栏目</button>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="{:url('Category/edit',array('id'=>$vo['id']))}">
+                                        <button class="btn btn-xs btn-info" type="button"><i class="fa fa-pencil"></i>&nbsp;编辑</button>
+                                    </a>
+                                    <a href="{:url('Category/delProg',array('id'=>$vo['id']))}">
+                                        <button class="btn btn-xs btn-danger" type="button"><i class="fa fa-trash-o"></i>&nbsp;删除</button>
+                                    </a>
+                                </td>
+                            </tr>
+                            {volist name="prog" id="vol"}
+                                {if condition="$vo['id'] eq $vol['pid']"}
+                                    <tr>
+                                        <td>{$vol.id}</td>
+                                        <td>&nbsp;&nbsp;|——&nbsp;{$vol.catename}</td>
+                                        <td>
+                                            <a href="{:url('Category/edit',array('id'=>$vol['id']))}">
+                                                <button class="btn btn-xs btn-info" type="button"><i class="fa fa-pencil"></i>&nbsp;编辑</button>
+                                            </a>
+                                            <a href="{:url('Category/delChild',array('id'=>$vol['id']))}">
+                                                <button class="btn btn-xs btn-danger" type="button"><i class="fa fa-trash-o"></i>&nbsp;删除</button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                {/if}
+                            {/volist}
+                        {/volist}
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+{/block}
+
+{block name="js"}
+    
+{/block}

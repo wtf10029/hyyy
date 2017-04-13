@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="keywords" content="{$system.seo_keywords|default=''}">
+  <meta name="description" content="{$system.seo_description|default=''}">
+  <link rel="icon" type="image/png" href="__PUBLIC__/images/favicon.jpg">
+  <link href="__PUBLIC__/css/style.css" rel="stylesheet" type="text/css" />
+  <link href="__PUBLIC__/css/lanren.css" rel="stylesheet" type="text/css" />
+  <!-- 新 Bootstrap 核心 CSS 文件 -->
+  <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+  {block name="link"}{/block}
+  <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <title>{block name="title"}{/block}</title>
+</head>
+
+<body>
+  <div class="main-row">
+    <nav class="navbar navbar-primary">
+      <div class="container">
+
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed glyphicon glyphicon-align-justify" style="font-size: 20px" data-toggle="collapse" data-target="#header-navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+          <a class="navbar-brand" href="{:url('index/Index/index')}">
+            <img alt="华豫医药" src="__PUBLIC__/images/logo.jpg">
+          </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="header-navbar-collapse" class="collapse navbar-collapse">
+          <div class="zh-en"><a href="{:url('index/Index/index')}">中文</a>|<a href="{:url('index_en/Index/index')}">英文</a></div>
+          <div class=" navbar-right">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="{:url('index/Index/index')}">首页</a>
+              </li>
+              <li>
+                <a href="{:url('index/Aboutus/index')}">关于华豫</a>
+              </li>
+              <li>
+                <a href="{:url('index/Product/index')}">产品中心</a>
+              </li>
+              <li>
+                <a href="{:url('index/News/index')}">新闻中心</a>
+              </li>
+              <li>
+                <a href="{:url('index/Contact/index')}">联系我们</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+    <!-- content -->
+    {block name="content"}{/block}
+    <!-- end content -->
+    <div class="bottom">
+      <div class="row-bottom">
+        <div class="col-md-2 col-xs-6">
+          <div class="menu">
+            <h4>关于我们</h4>
+            <p><a target="_blank" href="{:url('index/Aboutus/index')}">公司简介</a></p>
+            <p><a href="{:url('index/Aboutus/index')}">发展历程</a></p>
+            <p><a href="{:url('index/Aboutus/index')}">企业文化</a></p>
+          </div>
+        </div>
+        <div class="col-md-2 col-xs-6">
+          <div class="menu">
+            <h4>产品展示</h4>
+            <p><a target="_blank" href="{:url('index/Product/index')}">用途范围</a></p>
+            <p><a href="{:url('index/Product/index')}">功能特点</a></p>
+            <p><a href="{:url('index/Product/index')}">产品优势</a></p>
+          </div>
+        </div>
+        <div class="col-md-2 col-xs-6">
+          <div class="menu">
+            <h4>新闻中心</h4>
+            <p><a target="_blank" href="{:url('index/News/index')}">公司新闻</a></p>
+            <p><a href="{:url('index/News/index_hy')}">行业新闻</a></p>
+          </div>
+        </div>
+        <div class="col-md-2 col-xs-6">
+          <div class="menu">
+            <h4>联系我们</h4>
+            <p><a target="_blank" href="{:url('index/Contact/index')}">联系方式</a></p>
+            <p><a href="{:url('index/Contact/index')}">公司地址</a></p>
+            <p><a href="{:url('index/Contact/index')}">在线咨询</a></p>
+          </div>
+        </div>
+        <div class="col-md-4 col-xs-12">
+          <div class="er-code">
+            <div class="col-md-6 col-xs-6">
+              <p>精彩内容请关注</p>
+              <p>{$system.tel}</p>
+              <a href="http://wpa.qq.com/msgrd?V=1&uin=3391648175&exe=qq&Site=qq&menu=yes"><button type="button" class="btn btn-warning zx">在线咨询</button></a>
+            </div>
+            <div class="col-md-6 col-xs-6">
+              <img src="__IMAGE__/{$wem.url}" alt="{$wem.title}">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <div class="jishu">
+
+          <ul style="width:100%;">
+            <li><a href="###">友情链接:</a></li>
+            {volist name="link" id="vo"}
+            <li><a href="{$vo.url}" title="{$vo.title}" target="_blank">{$vo.title}</a></li>
+            {/volist}
+          </ul>
+
+          <div class="col-xs-12 col-sm-12 col-md-8">
+            ©2014 HangZhou ShiHe Network Technology Co.Ltd. {$system.icp_certificate|default=""}<br> 
+            地址:{$system.address}
+          </div>
+          <div class="col-xs-12 col-md-4 js">
+            {$system.site_name} <br> 技术支持：www.hzshihe.cn
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 浮动客服 -->
+  <div id="kefu" class="visible-md-block visible-lg-block">
+    <div class="keifu_box">
+      <div class="qq"><a target="_blank" href="tencent://message/?uin=3391648175&Site=&Menu=yes"><img src="__PUBLIC__/images/qq.png" title="在线客服" /></a></div> 
+      <div class="qq"><a target="_blank" href="tencent://message/?uin=3391648175&Site=&Menu=yes"><img src="__PUBLIC__/images/qq.png" title="在线留言"/></a></div>
+    </div>
+  </div>
+
+</body>
+{block name="js"}{/block}
+<script type="text/javascript">
+  {$system.code|default=""}
+</script>
+<script>
+$(function(){
+  var flag=0;
+  $('#rightArrow').on("click",function(){
+    if(flag==1){
+      $("#floatDivBoxs").animate({right: '-175px'},300);
+      $(this).animate({right: '-5px'},300);
+      $(this).css('background-position','-50px 0');
+      flag=0;
+    }else{
+      $("#floatDivBoxs").animate({right: '0'},300);
+      $(this).animate({right: '170px'},300);
+      $(this).css('background-position','0px 0');
+      flag=1;
+    }
+  });
+});
+</script>
+
+<script>
+  var kefu = {};
+    kefu._x;
+    kefu._y;
+    kefu.moveBox = $('#kefu'); //整体悬浮框
+    kefu.drag = $('#kefu .move'); //可拖动部分
+    kefu.defaultTop = (window.screen.height - kefu.moveBox.height())/2 - 200; //默认顶部保持上下居中，再往上去200像素
+  $(window).scroll(function(){
+    var offsetTop = kefu.defaultTop + $(window).scrollTop()+'px';
+    kefu.moveBox.animate({top:offsetTop},{
+      duration: 600,
+        queue: false
+      });
+  });
+
+</script>
+</html>

@@ -1,0 +1,36 @@
+{extend name="layouts/index"}
+
+{block name="title"}产品详情{/block}
+
+{block name="link"}{/block}
+
+{block name="content"}
+    <!--banner-->
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol>
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      </ol>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="__IMAGE__/{$p_img['url']}" alt="{$p_img['title']}">
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="product-row">
+        <div class="location">
+          <div class="col-xs-12 col-sm-12 col-md-12">您所在的位置：<a href="{:url('index/Index/index')}"> 首页 ></a><a href="{:url('index/Product/index')}"> 产品中心 </a> > {$product.title} </div>
+        </div>
+        <div class="basic-information">
+          <div class="basic-content">
+            {$product.content}
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+{/block}
+
+{block name="js"}{/block}

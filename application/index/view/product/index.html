@@ -1,0 +1,62 @@
+{extend name="layouts/index"}
+
+{block name="title"}{$system.site_name} - 产品中心{/block}
+
+{block name="link"}{/block}
+
+{block name="content"}
+      <!--banner-->
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol>
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <img src="__IMAGE__/{$p_img['url']}" alt="{$p_img['title']}">
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="procontent">
+          <div class="col-xs-4 col-md-4 visible-lg-block visible-md-block">
+            <div class="leftnav">
+              <ul>
+                <a href="{:url('index/Product/index')}">
+                  <li class="leftnavactive">全部类别</li>
+                </a>
+                {volist name="classify" id="vo"}
+                <a href="{:url('index/Product/lst',array('cid' => $vo['id']))}">
+                  <li>{$vo.catename}</li>
+                </a>
+                {/volist}
+              </ul>
+            </div>
+          </div>
+          <div class="col-xs-12 col-md-8">
+            <div class="location visible-lg-block visible-md-block">
+              <div class="col-xs-12 col-sm-12 col-md-12 abloc">您所在的位置：<a href="{:url('index/Index/index')}"> 首页 &gt;</a>产品中心</div>
+            </div>
+            <div class="proshow">
+              <div class="col-xs-12 col-md-12 proshow1">
+                {volist name="product" id="vo"}
+                <div class="col-xs-6 col-md-3 proli">
+                  <a href="{:url('index/Product/detail',array('id' => $vo['id']))}">
+                    <img src="__IMAGE__/{$vo.thumbnail}">
+                    <span>{$vo.title}</span>
+                  </a>
+                </div>
+                {/volist}
+                {$product->render()}
+                <div class="col-xs-12 col-md-12 stock-page"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{/block}
+
+{block name="js"}{/block}

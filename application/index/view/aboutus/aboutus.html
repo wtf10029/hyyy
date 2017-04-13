@@ -1,0 +1,92 @@
+{extend name="layouts/index"}
+
+{block name="title"}{$system.site_name} - 关于我们{/block}
+
+{block name="link"}{/block}
+
+{block name="content"}
+    <!--banner-->
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol>
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      </ol>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="__IMAGE__/{$ab_img.url}" alt="{$ab_img.title}">
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="procontent">
+        <div class="col-xs-4 col-md-4 visible-lg-block">
+          <div class="leftnav">
+            <ul>
+              <a href="javascript:void(0);">
+                <li class="leftnavactive">公司简介</li>
+              </a>
+              <a href="javascript:void(0);">
+                <li>发展宗旨</li>
+              </a>
+              <a href="javascript:void(0);">
+                <li>发展规划</li>
+              </a>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-8">
+          <div class="location visible-lg-block">
+            <div class="col-xs-12 col-sm-12 col-md-12 abloc">您所在的位置：<a href="{:url('index/Index/index')}"> 首页 &gt;</a>关于华豫</div>
+          </div>
+          <div class="proshow">
+            <div class="col-xs-12 col-md-12 proshow1">
+              <div class="col-xs-12 col-md-12">
+                <div class="col-xs-9 col-md-4 abouttil"><span></span>
+                  <font>公司简介</font>
+                </div>
+                <div class="col-xs-3 col-md-8 line"></div>
+              </div>
+              <div class="col-xs-12 col-md-12">
+                <div class="col-xs-12 col-md-6 aboutjj">
+                  杭州华豫医药科技有限公司是一家致力于医疗高科技产品研发，生产和推广的公司。公司积极引进国际上高新技术的设备和耗材。同时积极投资医用高新设备，耗材和药品的研发生产。公司目前主要经营骨科，外科，妇产科，急诊科等科室的耗材和设备，业务目前覆盖整个浙江省。
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <img src="__PUBLIC__/images/about-right.jpg">
+                </div>
+              </div>
+              <div class="col-xs-12 col-md-12">
+                <div class="col-xs-9 col-md-4 abouttil"><span></span>
+                  <font>公司宗旨</font>
+                </div>
+                <div class="col-xs-3 col-md-8 line"></div>
+              </div>
+              <div class="col-xs-12 col-md-12">
+                <div class="col-xs-12 col-md-6">
+                  <img src="__PUBLIC__/images/zz.jpg">
+                </div>
+                <div class="col-xs-12 col-md-6 aboutjj">
+                  杭州华豫医药科技有限公司以“让人人享有健康”为企业目标。秉承以“人为本”的用人理念，用心尊重每一位合作伙伴，以期达到双赢。以市场为中心，不为市场服务的员工一个不要，不为市场服务的机构一个不设。创新务实，追求卓越。提倡正直诚实，敢于创新，勇于负责的职业精神。主张“客户利益第一，员工利益第二，老板利益第三”的利益分配原则。
+                </div>
+              </div>
+              <div class="col-xs-12 col-md-12">
+                <div class="col-xs-9 col-md-4 abouttil"><span></span>
+                  <font>发展规划</font>
+                </div>
+                <div class="col-xs-3 col-md-8 line"></div>
+              </div>
+              <div class="col-xs-12 col-md-12">
+                <div class="col-xs-12 col-md-12 aboutjj">
+                  公司从2015年成立初就设定了第一个五年计划，立足浙江，面向长三角。到2020年公司业务额突破5亿元，在浙江省排名进入前10位。
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+{/block}
+
+{block name="js"}{/block}
